@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login OTP</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #121212;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .email-container {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .email-container h1 {
+      color: #1DB954;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .email-container h2 {
+      color: #FFFFFF;
+      font-size: 48px;
+      margin: 20px 0;
+    }
+    .email-container p {
+      color: #B3B3B3;
+      font-size: 16px;
+    }
+    .otp-code {
+      background-color: #1DB954;
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: #121212;
+      font-weight: bold;
+      font-size: 36px;
+      letter-spacing: 5px;
+      display: inline-block;
+      margin: 20px 0;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #B3B3B3;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <h1>Here is Your OTP for Login</h1>
+    <div class="otp-code"><%= otp %></div>
+    <p>Use this code to complete your login process.</p>
+    <div class="footer">
+      <p>Thank you for choosing our service!<br> Stay secure, stay safe.</p>
+    </div>
+  </div>
+</body>
+</html>
