@@ -22,5 +22,5 @@ app.listen(PORT, () => {
 });
 
 app.get("/",async(req,res)=>{
-  res.send("Book Bazaar is listening")
+  res.send("Book Bazaar is listening successfully")
 })
