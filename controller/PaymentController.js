@@ -24,7 +24,7 @@ exports.initiatePayment = async (req, res) => {
       payment_method_types: ['card'],
       line_items, 
       mode: 'payment', 
-      success_url: 'https://bookbazaar-10gv.onrender.com/successPayment', 
+      success_url: 'https://reddy9100.github.io/successsound/', 
       cancel_url: 'https://bookbazaar-10gv.onrender.com/', 
       metadata: {
         address, 
