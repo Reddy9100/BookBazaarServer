@@ -1,6 +1,7 @@
 const express = require('express');
-const { UploadSliderBooks ,getBooks} = require("../controller/FormUpload");
+const { UploadSliderBooks ,getBooks } = require("../controller/FormUpload");
 const { Login, resendOtp, ValidateOtp } = require('../controller/LoginController');
+const Payment = require("../controller/PaymentController")
 const router = express.Router();
 
 // Route for uploading files
@@ -18,5 +19,8 @@ router.post("/login",Login)
 router.post("/resend-otp", resendOtp);
 
 router.post("/validate-otp" ,ValidateOtp)
+
+
+router.post("/payment",Payment.processPayment)
 
 module.exports = router;
