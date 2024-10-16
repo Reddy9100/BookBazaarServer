@@ -21,6 +21,6 @@ router.post("/resend-otp", resendOtp);
 router.post("/validate-otp" ,ValidateOtp)
 
 
-router.post("/payment",Payment.processPayment)
+router.post("/payment",Payment.initiatePayment)
 
 module.exports = router;
