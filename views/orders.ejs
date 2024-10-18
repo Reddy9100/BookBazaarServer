@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        h1 {
+            font-size: 26px;
+            color: #4CAF50;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+        .item img {
+            max-width: 80px;
+            border-radius: 8px;
+            margin-right: 15px;
+            transition: transform 0.2s;
+        }
+        .item img:hover {
+            transform: scale(1.05);
+        }
+        .item-details {
+            flex-grow: 1;
+        }
+        .item-price {
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 16px;
+        }
+        .total-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-top: 10px;
+            text-align: right;
+        }
+        .address {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        .button:active {
+            transform: translateY(1px);
+        }
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Your Purchase!</h1>
+        <p>Your payment has been successfully processed. Here are the details:</p>
+        
+        <h2>Order Summary</h2>
+        <% let totalAmount = 0; %>
+        <% items.forEach(item => { %>
+            <div class="item">
+                <img src="<%= item.picture %>" alt="<%= item.title %>">
+                <div class="item-details">
+                    <strong><%= item.title %></strong>
+                    <div class="item-price">₹<%= item.price %> x <%= item.quantity %></div>
+                </div>
+            </div>
+            <% totalAmount += item.price * item.quantity; %>
+        <% }); %>
+        
+        <div class="total-price">Total: ₹<%= totalAmount %></div>
+
+        <div class="divider"></div>
+
+        <h2>Delivery Address</h2>
+        <div class="address">
+            <p><%= Useraddress %></p>
+        </div>
+        
+        <a href="#" class="button">View Your Order</a>
+
+        <div class="footer">
+            <p>If you have any questions, feel free to contact our support team.</p>
+            <p>Thank you for shopping with us!</p>
+        </div>
+    </div>
+</body>
+</html>

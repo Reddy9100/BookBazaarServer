@@ -26,10 +26,10 @@ const renderTemplate = (templatePath, data) => {
 };
 
 exports.Login = async (req, res) => {
-  const { email } = req.body;
-
-  if (!email) {
-    return res.status(400).json({ message: "Email is required" });
+  const {name, email } = req.body;
+  console.log(req.body)
+  if (!name || !email) {
+    return res.status(400).json({ message: "All feilds Required" });
   }
 
   let user = await LoginModel.findOne({ email });
