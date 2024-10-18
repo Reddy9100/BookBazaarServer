@@ -22,5 +22,6 @@ router.post("/validate-otp" ,ValidateOtp)
 
 
 router.post("/payment",Payment.initiatePayment)
+router.post("/orders",Payment.getOrders)
 
 module.exports = router;

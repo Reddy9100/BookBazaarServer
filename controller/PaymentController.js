@@ -93,3 +93,27 @@ exports.initiatePayment = async (req, res) => {
     res.status(500).json({ success: false, error: error.message });
   }
 };
+
+
+exports.getOrders = async (req, res) => {
+  const { email } = req.body;
+console.log(req.body)
+  
+  if (!email) {
+    return res.status(400).json({ success: false, message: "Email is required." });
+  }
+
+  try {
+    const orders = await Order.find({"user.email" : email });
+    console.log(orders)
+
+    if (orders.length > 0) {
+      return res.status(200).json({ success: true, orders });
+    } else {
+      return res.status(404).json({ success: false, message: "No orders found." });
+    }
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    return res.status(500).json({ success: false, message: "Server error." });
+  }
+};
