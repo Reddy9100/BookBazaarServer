@@ -15,6 +15,8 @@ app.use(cors({
 connectDB()
 app.use(uploadRoutes);
 
+
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

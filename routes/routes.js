@@ -19,7 +19,7 @@ router.post("/login",Login)
 router.post("/resend-otp", resendOtp);
 
 router.post("/validate-otp" ,ValidateOtp)
-
+router.post('/webhook', express.raw({ type: 'application/json' }), Payment.handleWebhook);
 
 router.post("/payment",Payment.initiatePayment)
 router.post("/orders",Payment.getOrders)
